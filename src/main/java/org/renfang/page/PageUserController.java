@@ -1,4 +1,4 @@
-package org.renfang;
+package org.renfang.page;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,11 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("page")
-public class UserController {
-
-    public UserController(){
-        System.out.println("------------------------------------------------------------");
-    }
+public class PageUserController {
 
     /*** 
      * 用户登陆 
