@@ -1,50 +1,35 @@
-/*
-$.ajax({
-    type : "post",
-    url : "$!base/aaa/getList",
-    dataType: 'html',
-    data : JSON.stringify(queryData),
-    contentType : "application/json",
-    success : function (data) {
-// data = jQuery.parseJSON(data);
-        console.info(data);
-        $("#aaa").html(data);
+$(document).ready(function () {
+    document.getElementById("form_login").onsubmit = function (event) {
+        var form = document.forms["form_login"];
+        return formLoginSubmit(event, form);
     }
-});*/
+});
 
-window.onload = function () {
-    /*document.forms["form_login"].onsubmit = function (event) {
-        if(checkInput()){
-
-        }else {
-            stopDefault(event);
-        }
-
-    }*/
-};
 
 function formLoginSubmit(event, form) {
-    if(checkInput(form)){
-        var queryData={username:form["username"].value, password:form["password"].value}
-        $.post("login",JSON.stringify(queryData),function(data,status){
-            alert("数据: \n" + data + "\n状态: " + status);
-        });
-       /* $.get({
-            type : "post",
-            url : "login",
-            dataType: 'json',
+    stopDefault(event);
+    if (checkInput(form)) {
+        var queryData = {"username": form["username"].value, "password": form["password"].value}
+        $.ajax({
+            type: "post",
+            url: "login",
+            // dataType: "json",
             data : JSON.stringify(queryData),
-            contentType : "application/json",
-            success : function (data) {
-// data = jQuery.parseJSON(data);
-                console.info(data);
+            contentType: "application/json",
+            async: false, // ajax 默认是异步的，这里要改成同步，否则有可能先执行后面的代码了
+            success: function (data) {
+                // data = jQuery.parseJSON(data);
+                alert(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR);
+                alert(textStatus);
+                alert(errorThrown);
             }
-        });*/
-        return true;
-    }else {
-        stopDefault(event);
-        return false;
+
+        });
     }
+    return false;
 }
 
 function checkInput(form) {
@@ -53,12 +38,12 @@ function checkInput(form) {
     warningTag.className = "checkInput";
 
     var result = true;
-    if(form["username"].value.length <= 6){
+    if (form["username"].value.length <= 6) {
         $("#username").after(warningTag.cloneNode(true));
         result = false;
     }
-    if(form["password"].value.length <= 0){
-       $("#password").after(warningTag.cloneNode(true));
+    if (form["password"].value.length <= 0) {
+        $("#password").after(warningTag.cloneNode(true));
         result = false;
     }
 
@@ -71,9 +56,7 @@ function stopDefault(event) {
         event.preventDefault();
     } else {
         window.event.returnValue = false;//如果是IE下执行这个
-
     }
-    alert("stop submit");
     return false;
 }
 

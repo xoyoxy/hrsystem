@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
-
+    <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../js/htmlpost.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
-<form name="form_login" action="" method="post" onsubmit="return formLoginSubmit(event,this)">
+<form id="form_login" name="form_login" action="" method="post" >
     <label for="username">username:</label><input id="username" type="text" name="username" required="required"/>
     <p>
         <label for="password">password:</label><input id="password" type="password" name="password" required="required"/>
@@ -16,6 +16,4 @@
         <input name="form_login_submit" type="submit" value="submit"/>
 </form>
 </body>
-<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
-<script src="../js/htmlpost.js" type="text/javascript"></script>
 </html>
