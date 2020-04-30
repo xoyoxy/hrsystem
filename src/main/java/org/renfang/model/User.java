@@ -2,7 +2,7 @@ package org.renfang.model;
 
 import java.util.Objects;
 
-public class User {
+public class User extends Envelope{
 
     private String username;
 

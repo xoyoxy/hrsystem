@@ -2,11 +2,11 @@ package org.renfang.html;
 
 import org.renfang.model.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("html")
@@ -18,18 +18,23 @@ public class HTMLUserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "login", method = RequestMethod.POST, consumes = "application/json")
-    public String login(@RequestBody User user) {
+    @RequestMapping(value = "login", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    public User login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
         //验证传递过来的参数是否正确，否则返回到登陆页面。  
         if (this.checkParams(new String[]{user.getUsername(), user.getUsername()})) {
-            //指定要返回的页面为succ.jsp  
+            //指定要返回的页面为succ.jsp
             ModelAndView mav = new ModelAndView("html/succ");
-            //将参数返回给页面  
+            //将参数返回给页面
             mav.addObject("username", user.getUsername());
             mav.addObject("password", user.getPassword());
-            return "html/succ";
+            return user;
+        }else{
+            User errorUser = new User();
+            errorUser.setError("error");
+            return errorUser;
         }
-        return "error";
+
     }
 
     /*** 

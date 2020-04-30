@@ -1,3 +1,7 @@
 .checkInput{
     color:red;
 }
+.div_left{
+    float: left;
+    height: 22px;
+}
