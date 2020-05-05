@@ -65,8 +65,12 @@ i {
     margin: 0 15px;
 }
 
+html,body{
+  height: 100%;
+}
+
 .main {
-    height: 450px;
+    height: 100%;
 }
 
 .content {
@@ -77,11 +81,6 @@ i {
 
 .login {
     float: right;
-    margin: 68px 15px 0 0;
-    _margin: 68px 10px 0 0;
-    width: 318px;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .clearfix:after {
@@ -98,7 +97,6 @@ i {
 }
 
 .login-box {
-    margin: 0 auto;
     width: 262px;
     height: 190px;
     margin-top: 0px;
@@ -106,10 +104,10 @@ i {
 }
 
 .text {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 5px 13px;
     width: 232px;
-    height: 16px;
+    height: 30px;
     outline: none;
     border: 1px solid #cfcece;
     background: #dedede;
