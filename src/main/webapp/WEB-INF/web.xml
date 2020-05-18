@@ -41,15 +41,17 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-   <!-- <servlet-mapping>
+<!--
+    <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.html</url-pattern>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.jpg</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
+-->
 
 </web-app>

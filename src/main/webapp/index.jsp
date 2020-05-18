@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2020/4/24
+  Time: 16:30
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 
@@ -7,7 +15,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   <link type="text/css" rel="stylesheet" href="css/index.css" />
-  <title>人力</title>
+  <title>人·力</title>
 </head>
 
 <body>
