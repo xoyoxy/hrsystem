@@ -4,12 +4,12 @@ package org.renfang.dao;
 import org.renfang.model.Employee;
 
 public interface EmployeeDao {
-    void insertUsers(Employee users);
+    void insertEmployees(Employee users);
 
-    void updateUsers(Employee users);
+    void updateEmployees(Employee users);
 
-    void deleteUsers(Employee users);
+    void deleteEmployees(Employee users);
 
-    Employee selectUserById(Long id);
+    Employee selectEmployeeById(int id);
 
 }

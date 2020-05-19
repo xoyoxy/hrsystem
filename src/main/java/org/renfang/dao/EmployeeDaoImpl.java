@@ -7,24 +7,24 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
-	
-	@Autowired
-	private HibernateTemplate hibernateTemplate;
- 
-	public void insertUsers(Employee users) {
-		this.hibernateTemplate.save(users);
-	}
- 
-	public void updateUsers(Employee users) {
-		this.hibernateTemplate.update(users);
-	}
- 
-	public void deleteUsers(Employee users) {
-		this.hibernateTemplate.delete(users);
-	}
- 
-	public Employee selectUserById(Long id) {
-		return this.hibernateTemplate.get(Employee.class, id);
-	}
- 
+
+    @Autowired
+    private HibernateTemplate hibernateTemplate;
+
+    public void insertEmployees(Employee Employees) {
+        this.hibernateTemplate.save(Employees);
+    }
+
+    public void updateEmployees(Employee Employees) {
+        this.hibernateTemplate.update(Employees);
+    }
+
+    public void deleteEmployees(Employee Employees) {
+        this.hibernateTemplate.delete(Employees);
+    }
+
+    public Employee selectEmployeeById(int id) {
+        return this.hibernateTemplate.get(Employee.class, id);
+    }
+
 }
