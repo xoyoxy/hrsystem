@@ -33,8 +33,8 @@ public class Employee extends AbstractTimeStamp {
     @Column(name = "phone")
     private String phone;
 
-    @OneToOne(cascade=CascadeType.ALL)//全级联的级联关系
-    @JoinColumn(name="id",unique=true)//被控类对应的主键为pid
+    @OneToOne(cascade = CascadeType.ALL)//全级联的级联关系
+    @JoinColumn(name = "work_id")//被控类对应的主键为pid
     private Password password;
 }
 
