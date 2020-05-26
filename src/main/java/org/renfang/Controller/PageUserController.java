@@ -1,11 +1,9 @@
-package org.renfang.page;
+package org.renfang.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("page")
@@ -18,7 +16,7 @@ public class PageUserController {
      * @param password
      * @return
      */
-    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @RequestMapping(value = "page/login", method = RequestMethod.POST)
     public ModelAndView login(String username, String password) {
         //验证传递过来的参数是否正确，否则返回到登陆页面。  
         if (this.checkParams(new String[]{username, password})) {
